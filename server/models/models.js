@@ -41,7 +41,7 @@ const Appointments = sequelize.define("Appointments", {
 });
 
 const Employees = sequelize.define("Employees", {
-  employee_id: { type: DataTypes.INTEGER, primaryKey: true },
+  employee_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true  },
   first_name: { type: DataTypes.STRING(50) },
   last_name: { type: DataTypes.STRING(50) },
   email: { type: DataTypes.STRING(100) },
@@ -53,7 +53,7 @@ const Employees = sequelize.define("Employees", {
 });
 
 const PaymentTransactions = sequelize.define("PaymentTransactions", {
-  transaction_id: { type: DataTypes.INTEGER, primaryKey: true },
+  transaction_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true  },
   customer_id: { type: DataTypes.INTEGER },
   appointment_id: { type: DataTypes.INTEGER },
   amount: { type: DataTypes.NUMERIC(10, 2) },
@@ -62,13 +62,13 @@ const PaymentTransactions = sequelize.define("PaymentTransactions", {
 });
 
 const ServiceCategories = sequelize.define("ServiceCategories", {
-  service_category_id: { type: DataTypes.INTEGER, primaryKey: true },
+  service_category_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true  },
   category_name: { type: DataTypes.STRING(255), allowNull: false },
   category_description: { type: DataTypes.TEXT },
 });
 
 const Services = sequelize.define("Services", {
-  service_id: { type: DataTypes.INTEGER, primaryKey: true },
+  service_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true  },
   service_name: { type: DataTypes.STRING(15), allowNull: false },
   service_category_id: { type: DataTypes.INTEGER },
   description: { type: DataTypes.TEXT, allowNull: false },
@@ -77,7 +77,7 @@ const Services = sequelize.define("Services", {
 });
 
 const ServiceReviews = sequelize.define("ServiceReviews", {
-  review_id: { type: DataTypes.INTEGER, primaryKey: true },
+  review_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true  },
   appointment_id: { type: DataTypes.INTEGER },
   rating: { type: DataTypes.INTEGER },
   review_text: { type: DataTypes.TEXT },
